@@ -1,5 +1,6 @@
 package ronit.springFramework.springFrameDI.controllers;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import ronit.springFramework.springFrameDI.services.GreetingSerices;
 
@@ -7,7 +8,7 @@ import ronit.springFramework.springFrameDI.services.GreetingSerices;
 public class ConstructorInjectedcontroller {
     private final GreetingSerices greetingSerices;
 
-    public ConstructorInjectedcontroller(GreetingSerices greetingSerices) {
+    public ConstructorInjectedcontroller(@Qualifier("constructorGreetingServices") GreetingSerices greetingSerices) {
         this.greetingSerices = greetingSerices;
     }
 

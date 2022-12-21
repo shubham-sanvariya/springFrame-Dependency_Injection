@@ -2,9 +2,7 @@ package ronit.springFramework.springFrameDI.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ronit.springFramework.springFrameDI.services.GreetingSericesImpl;
-
-import static org.junit.jupiter.api.Assertions.*;
+import ronit.springFramework.springFrameDI.services.ConstructorGreetingServices;
 
 class PropertyinjectedControllerTest {
 
@@ -14,7 +12,7 @@ class PropertyinjectedControllerTest {
     void setUp() {
         controller = new PropertyinjectedController();
 
-        controller.greetingSerices = new GreetingSericesImpl();
+        controller.greetingSerices = new ConstructorGreetingServices();
     }
 
     @Test

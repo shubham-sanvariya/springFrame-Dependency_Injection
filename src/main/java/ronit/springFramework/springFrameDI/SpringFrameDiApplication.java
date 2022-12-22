@@ -16,9 +16,8 @@ public class SpringFrameDiApplication {
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
-		String greeting = myController.sayHello();
-
-		System.out.println(greeting);
+		System.out.println("-------PRIMARY");
+		System.out.println(myController.sayHello());
 
 		System.out.println("-------Property");
 		PropertyinjectedController propertyinjectedController = (PropertyinjectedController) ctx.getBean("propertyinjectedController");
@@ -34,6 +33,8 @@ public class SpringFrameDiApplication {
 		System.out.println("-------Constructor");
 
 		ConstructorInjectedcontroller constructorInjectedcontroller = (ConstructorInjectedcontroller) ctx.getBean("constructorInjectedcontroller");
+
+		System.out.println(constructorInjectedcontroller.getGreeting());
 
 	}
 

@@ -2,7 +2,8 @@ package ronit.springFramework.springFrameDI.controllers;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import ronit.springFramework.springFrameDI.services.GreetingSerices;
+
+import ronit.services.GreetingSerices;
 
 @Controller
 public class I18nController {

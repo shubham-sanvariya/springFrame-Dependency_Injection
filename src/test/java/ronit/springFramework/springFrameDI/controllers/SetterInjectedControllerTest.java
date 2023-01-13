@@ -2,7 +2,8 @@ package ronit.springFramework.springFrameDI.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ronit.springFramework.springFrameDI.services.ConstructorGreetingServices;
+
+import ronit.services.ConstructorGreetingServices;
 
 class SetterInjectedControllerTest {
 

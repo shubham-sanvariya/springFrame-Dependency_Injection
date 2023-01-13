@@ -3,9 +3,12 @@ package ronit.springFramework.springFrameDI;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
 import ronit.springFramework.springFrameDI.controllers.*;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"ronit.services","ronit.springFramework"})
 public class SpringFrameDiApplication {
 
 	public static void main(String[] args) {

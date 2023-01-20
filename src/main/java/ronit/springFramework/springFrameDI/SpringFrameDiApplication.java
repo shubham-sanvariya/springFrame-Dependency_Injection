@@ -11,6 +11,7 @@ import ronit.springFramework.springFrameDI.controllers.*;
 @ComponentScan(basePackages = {"ronit.services","ronit.springFramework"})
 public class SpringFrameDiApplication {
 
+
 	public static void main(String[] args) {
 	ApplicationContext ctx = SpringApplication.run(SpringFrameDiApplication.class, args);
 

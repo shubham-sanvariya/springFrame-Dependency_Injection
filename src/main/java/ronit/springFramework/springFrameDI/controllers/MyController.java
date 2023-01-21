@@ -1,19 +1,24 @@
 package ronit.springFramework.springFrameDI.controllers;
 
+
 import org.springframework.stereotype.Controller;
+import ronit.springFramework.springFrameDI.services.GreetingService;
 
-import ronit.services.GreetingSerices;
-
+/**
+ * Created by jt on 5/23/17.
+ */
 @Controller
 public class MyController {
 
-    private final GreetingSerices greetingSerices;
+    private GreetingService greetingService;
 
-    public MyController(GreetingSerices greetingSerices) {
-        this.greetingSerices = greetingSerices;
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
-    public String sayHello() {
-        return greetingSerices.sayGreeting();
+    public String hello(){
+        System.out.println("Hello!!! ");
+
+        return greetingService.sayGreeting();
     }
 }

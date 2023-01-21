@@ -1,19 +1,23 @@
 package ronit.springFramework.springFrameDI.controllers;
 
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import ronit.springFramework.springFrameDI.services.GreetingService;
 
-import ronit.services.GreetingSerices;
-
+/**
+ * Created by jt on 5/24/17.
+ */
 @Controller
-public class ConstructorInjectedcontroller {
-    private final GreetingSerices greetingSerices;
+public class ConstructorInjectedController {
 
-    public ConstructorInjectedcontroller(@Qualifier("constructorGreetingServices") GreetingSerices greetingSerices) {
-        this.greetingSerices = greetingSerices;
+    private GreetingService greetingService;
+
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
-    public String getGreeting() {
-        return greetingSerices.sayGreeting();
+    public String sayHello(){
+        return greetingService.sayGreeting();
     }
 }

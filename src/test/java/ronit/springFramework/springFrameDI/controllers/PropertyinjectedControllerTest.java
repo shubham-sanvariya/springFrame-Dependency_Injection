@@ -1,23 +1,27 @@
 package ronit.springFramework.springFrameDI.controllers;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import ronit.springFramework.springFrameDI.controllers.PropertyInjectedController;
+import ronit.springFramework.springFrameDI.services.GreetingServiceImpl;
 
-import ronit.services.ConstructorGreetingServices;
+import static org.junit.Assert.assertEquals;
 
-class PropertyinjectedControllerTest {
+/**
+ * Created by jt on 5/24/17.
+ */
+public class PropertyInjectedControllerTest {
 
-    PropertyinjectedController controller;
+    private PropertyInjectedController propertyInjectedController;
 
-    @BeforeEach
-    void setUp() {
-        controller = new PropertyinjectedController();
-
-        controller.greetingSerices = new ConstructorGreetingServices();
+    @Before
+    public void setUp() throws Exception {
+        this.propertyInjectedController = new PropertyInjectedController();
+        this.propertyInjectedController.greetingServiceImpl = new GreetingServiceImpl();
     }
 
     @Test
-    void getGreeting() {
-        System.out.println(controller.getGreetings());
+    public void testGreeting() throws Exception {
+        assertEquals(GreetingServiceImpl.HELLO_GURUS, propertyInjectedController.sayHello());
     }
 }

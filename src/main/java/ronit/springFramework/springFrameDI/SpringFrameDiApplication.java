@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import ronit.springFramework.springFrameDI.controllers.*;
+import ronit.springFramework.springFrameDI.exampleBeans.FakeDataSource;
 
 @SpringBootApplication
 public class SpringFrameDiApplication {
@@ -16,10 +17,13 @@ public class SpringFrameDiApplication {
 
 		MyController controller = (MyController) ctx.getBean("myController");
 
-		System.out.println(controller.hello());
-		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
-		System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
-		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUser());
+
+//		System.out.println(controller.hello());
+//		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+//		System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
+//		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
 
 	}
 

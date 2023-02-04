@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 import ronit.springFramework.springFrameDI.controllers.*;
 import ronit.springFramework.springFrameDI.exampleBeans.FakeDataSource;
+import ronit.springFramework.springFrameDI.exampleBeans.FakeJmsBroker;
 
 @SpringBootApplication
 public class SpringFrameDiApplication {
@@ -21,6 +22,9 @@ public class SpringFrameDiApplication {
 
 		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUser());
+
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUser());
 
 //		System.out.println(controller.hello());
 //		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());

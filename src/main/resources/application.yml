@@ -1,0 +1,14 @@
+shubh:
+  jms:
+    username: JMS Username
+    password: somepass
+    url: someurl
+
+# three dashes means file separator
+---
+spring:
+  config:
+    profiles: de
+shubh:
+  jms:
+    username: JMS Username $$$$$ German
